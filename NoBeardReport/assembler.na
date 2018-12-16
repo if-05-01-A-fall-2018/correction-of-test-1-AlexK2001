@@ -1,0 +1,62 @@
+"Enter Number 1:Enter Number 2:The Result is:"
+
+inc 12
+
+# print first Number:
+lit 0
+lit 15
+lit 16
+out 2
+
+# read first Input
+la 0 32
+la 0 36
+in 0
+
+# print second Number:
+lit 15
+lit 15
+lit 16
+out 2
+
+# read second Input
+la 0 36
+la 0 40
+in 0
+
+#check if the two numbers are equal
+lv 0 32
+lv 0 36
+rel 2
+fjmp .notEqual
+
+
+#  If both numbers are the same it takes the sum of the number and multiplies it by 2
+la 0 40
+lv 0 32
+lv 0 36
+add
+lit 2
+mul
+sto
+jmp .printResult
+
+# If the numbers are diﬀerent it takes the sum of the numbers
+.notEqual
+la 0 40
+lv 0 32
+lv 0 36
+add
+sto
+
+.printResult
+lit 30
+lit 14
+lit 15
+out 2
+lv 0 40
+lit 1
+out 0
+out 3
+
+halt
